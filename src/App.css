@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #10101a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    min-height: 100vh;
+}
+
+.header {
+    height: 75px;
+    background: #191927;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    border-bottom: 1px solid #29293b;
+}
+
+.header h2 {
+    color: #a970ff;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #29293b;
+    padding: 12px 18px;
+    border-radius: 25px;
+    width: 300px;
+}
+
+.search input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    width: 100%;
+}
+
+.profile {
+    background: #a970ff;
+    padding: 12px 17px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.main-layout {
+    display: flex;
+    min-height: calc(100vh - 155px);
+}
+
+.sidebar {
+    width: 220px;
+    background: #191927;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sidebar h2 {
+    color: #888;
+    font-size: 14px;
+}
+
+.sidebar a {
+    color: #bbb;
+    text-decoration: none;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.sidebar a:hover {
+    background: #303047;
+    color: #a970ff;
+}
+
+main {
+    flex: 1;
+    padding: 35px;
+    padding-bottom: 120px;
+    min-width: 0;
+}
+
+.page h1 {
+    margin-bottom: 12px;
+}
+
+.page p {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.page h2 {
+    margin: 30px 0 20px;
+}
+
+.song-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 22px;
+}
+
+.song-card {
+    background: #1d1d2d;
+    padding: 15px;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.song-card:hover {
+    transform: translateY(-5px);
+    background: #5b0196;
+}
+
+.song-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.song-card h3 {
+    margin: 12px 0 5px;
+}
+
+.song-card p {
+    margin-bottom: 12px;
+}
+
+.song-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.song-actions button,
+.playlist-form button {
+    background: #a970ff;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.song-actions .liked {
+    background: #e84393;
+}
+
+.music-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    background: #191927;
+    border-top: 1px solid #35354b;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 12px 25px;
+    z-index: 10;
+}
+
+.music-player p {
+    color: #aaa;
+}
+
+.player-song {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 180px;
+}
+
+.player-song img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.player-song p {
+    margin-top: 5px;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.player-controls button {
+    background: #a970ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.player-controls input {
+    width: 200px;
+    accent-color: #a970ff;
+}
+
+.playlist-form {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.playlist-form input {
+    padding: 12px;
+    background: #29293b;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+}
+
+.playlist-item {
+    padding: 15px;
+    background: #29293b;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.playlist-item p {
+    margin: 8px 0 0;
+}
+
+@media(max-width: 700px) {
+
+    .header {
+        padding: 15px;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .search {
+        width: 100%;
+        order: 3;
+    }
+
+    .sidebar {
+        width: 65px;
+        padding: 20px 8px;
+        gap: 15px;
+    }
+
+    .sidebar h2,
+    .sidebar a {
+        font-size: 0;
+    }
+
+    .sidebar a {
+        justify-content: center;
+    }
+
+    .sidebar a svg {
+        font-size: 20px;
+    }
+
+    main {
+        padding: 18px;
+    }
+
+    .song-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .music-player {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .player-controls {
+        gap: 8px;
+    }
+
+    .player-controls input {
+        width: 70px;
+    }
+
+    .player-song {
+        min-width: 0;
+    }
+
+    .player-song img {
+        width: 40px;
+        height: 40px;
+    }
+}
